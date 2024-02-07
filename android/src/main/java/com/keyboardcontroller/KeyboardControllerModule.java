@@ -22,11 +22,16 @@ public class KeyboardControllerModule extends ReactContextBaseJavaModule {
     return NAME;
   }
 
+  static {
+    System.loadLibrary("react-native-keyboard-controller");
+  }
+
+  private static native double nativeMultiply(double a, double b);
 
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
   public void multiply(double a, double b, Promise promise) {
-    promise.resolve(a * b);
+    promise.resolve(nativeMultiply(a, b));
   }
 }

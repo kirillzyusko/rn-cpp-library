@@ -10,7 +10,7 @@ RCT_EXPORT_METHOD(multiply:(double)a
                   resolve:(RCTPromiseResolveBlock)resolve
                   reject:(RCTPromiseRejectBlock)reject)
 {
-    NSNumber *result = @(a * b);
+    NSNumber *result = @(keyboardcontroller::multiply(a, b));
 
     resolve(result);
 }
